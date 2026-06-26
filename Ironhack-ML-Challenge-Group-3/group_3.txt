@@ -1,0 +1,2 @@
+R² = 0.9331 → from Test Set
+MAE = 502.75 → from Test Set
