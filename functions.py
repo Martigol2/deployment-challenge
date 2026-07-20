@@ -152,20 +152,6 @@ from sklearn.metrics import r2_score, mean_absolute_error
 def tune_random_forest(X_train, y_train, X_val, y_val):
     """
     Tune a Random Forest model using RandomizedSearchCV.
-
-    Parameters:
-        X_train (pd.DataFrame): Training features.
-        y_train (pd.Series): Training target.
-        X_val (pd.DataFrame): Validation features.
-        y_val (pd.Series): Validation target.
-
-    Returns:
-        tuple:
-            tuned_model,
-            predictions,
-            best_params,
-            r2,
-            mae
     """
 
     rf_params = {
@@ -180,9 +166,9 @@ def tune_random_forest(X_train, y_train, X_val, y_val):
         n_iter=5,
         cv=2,
         scoring="r2",
-        n_jobs=1,
+        n_jobs=-1,          # <-- Use all CPU cores
         random_state=42,
-        verbose=1
+        verbose=2           # <-- Show detailed progress
     )
 
     rf_tuned.fit(X_train, y_train)

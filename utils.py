@@ -36,10 +36,8 @@ def save_predictions(df, file_path):
 
 import joblib
 
-def save_model(model, path):
-    joblib.dump(model, path)
+def save_model(model, file_path):
+    joblib.dump(model, file_path)
 
-import joblib
-
-def load_model(path):
-    return joblib.load(path)
+def load_model(file_path):
+    return joblib.load(file_path)
