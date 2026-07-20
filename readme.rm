@@ -1,0 +1,213 @@
+# 📈 Sales Prediction API
+
+An end-to-end Machine Learning deployment project that predicts daily store sales using an XGBoost regression model.
+
+The project includes:
+
+- 🤖 Machine Learning model (XGBoost)
+- ⚡ FastAPI backend
+- ⚛️ React frontend
+- ☁️ Backend deployed on Render
+- ▲ Frontend deployed on Vercel
+
+---
+
+## 🚀 Live Demo
+
+### Frontend
+https://deployment-challenge.vercel.app
+
+### Backend API
+https://deployment-challenge.onrender.com
+
+### API Documentation
+https://deployment-challenge.onrender.com/docs
+
+---
+
+## 🛠️ Tech Stack
+
+### Machine Learning
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- Joblib
+
+### Backend
+- FastAPI
+- Uvicorn
+
+### Frontend
+- React
+- Vite
+
+### Deployment
+- Render
+- Vercel
+- GitHub
+
+---
+
+## 📂 Project Structure
+
+```
+deployment-challenge/
+│
+├── api/
+│   ├── __init__.py
+│   └── main.py
+│
+├── frontend/
+│
+├── models/
+│   ├── xgboost.pkl
+│   └── scaler.pkl
+│
+├── functions.py
+├── preprocessing.py
+├── utils.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 📊 Model
+
+The final model is an **XGBoost Regressor** trained to predict daily sales based on store information.
+
+### Input Features
+
+- store_ID
+- day_of_week
+- nb_customers_on_day
+- promotion
+- state_holiday
+- school_holiday
+- open
+- date
+
+### Output
+
+Predicted daily sales.
+
+---
+
+## 🔌 API Endpoints
+
+### GET /
+
+Returns the API status.
+
+Example response:
+
+```json
+{
+  "message": "Deployment Challenge API is running!"
+}
+```
+
+---
+
+### POST /predict
+
+Request body:
+
+```json
+{
+    "store_ID": 1,
+    "day_of_week": 5,
+    "nb_customers_on_day": 600,
+    "promotion": 1,
+    "state_holiday": 0,
+    "school_holiday": 1,
+    "open": 1,
+    "date": "2015-07-31"
+}
+```
+
+Example response:
+
+```json
+[
+    {
+        "store_ID": 1,
+        "day_of_week": 5,
+        "nb_customers_on_day": 600,
+        "promotion": 1,
+        "state_holiday": 0,
+        "school_holiday": 1,
+        "open": 1,
+        "date": "2015-07-31",
+        "sales": 4264
+    }
+]
+```
+
+---
+
+## ⚙️ Running Locally
+
+### Clone the repository
+
+```bash
+git clone https://github.com/Martigol2/deployment-challenge.git
+```
+
+### Backend
+
+```bash
+pip install -r requirements.txt
+
+uvicorn api.main:app --reload
+```
+
+The API will be available at:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+### Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+The frontend will be available at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## ☁️ Deployment
+
+### Backend
+
+Hosted on **Render**.
+
+### Frontend
+
+Hosted on **Vercel**.
+
+---
+
+## 👤 Author
+
+Felipe Martignon
+
+LinkedIn:
+https://www.linkedin.com/in/fmartignon/
+
+GitHub:
+https://github.com/Martigol2
