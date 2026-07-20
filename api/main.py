@@ -10,7 +10,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://deployment-challenge.onrender.com",
+        "https://deployment-challenge.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
