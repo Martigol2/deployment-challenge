@@ -290,7 +290,7 @@ def predict_sales(model, scaler, df):
     df = df.copy()
 
     # Start with sales = 0
-    df["sales"] = 0
+    df["sales"] = 0.0
 
     # Separate open stores
     open_stores = df[df["open"] == 1].copy()
